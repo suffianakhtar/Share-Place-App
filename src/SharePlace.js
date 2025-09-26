@@ -58,7 +58,8 @@ function selectPlace(coordinates, address) {
   renderMap(coordinates);
   shareBtn.removeAttribute('disabled');
   const sharedLinkInputElement = document.getElementById('share-link');
-  sharedLinkInputElement.value = `${location.origin}/my-place/index.html?address=${encodeURI(address)}&lat=${
+  const basePath = location.origin + location.pathname.replace(/\/index\.html$/, '');
+  sharedLinkInputElement.value = `${basePath}my-place/index.html?address=${encodeURI(address)}&lat=${
     coordinates.lat
   }&lng=${coordinates.lng}`;
 }
