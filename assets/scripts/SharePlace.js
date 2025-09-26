@@ -244,7 +244,8 @@ function selectPlace(coordinates, address) {
   (0,_UI_Map__WEBPACK_IMPORTED_MODULE_2__["default"])(coordinates);
   shareBtn.removeAttribute('disabled');
   const sharedLinkInputElement = document.getElementById('share-link');
-  sharedLinkInputElement.value = `${location.origin}/my-place/index.html?address=${encodeURI(address)}&lat=${
+  const basePath = location.origin + location.pathname.replace(/\/index\.html$/, '');
+  sharedLinkInputElement.value = `${basePath}my-place/index.html?address=${encodeURI(address)}&lat=${
     coordinates.lat
   }&lng=${coordinates.lng}`;
 }
