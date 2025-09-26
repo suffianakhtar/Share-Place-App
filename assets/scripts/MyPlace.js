@@ -100,6 +100,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UI_Map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UI/Map */ "./src/UI/Map.js");
 
 
+const newPlaceLinkEl = document.getElementById('new-place-link');
+const basePath = location.origin + location.pathname.replace(/my-place\/index\.html$/, '');
+console.log(basePath);
+newPlaceLinkEl.href = basePath + '/index.html';
+
 const url = new URL(location.href);
 const address = url.searchParams.get('address');
 const lat = url.searchParams.get('lat');
